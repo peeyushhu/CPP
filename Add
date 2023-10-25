@@ -1,0 +1,41 @@
+#include <iostream> // You need to include the iostream header for input and output
+using namespace std;
+
+class C_ADD
+{
+public:
+    int a, b;
+    void getdata()
+    {
+        cout << "\n enter any two numbers";
+        cin >> a >> b;
+    }
+    void display()
+    {
+        cout << "\na=" << a;
+        cout << "\nb=" << b;
+    }
+    void add()
+    {
+        cout << "\nsum=" << a + b;
+    }
+};
+
+class C_subtract : public C_ADD // Corrected the class name to "C_subtract"
+{
+public:
+    void subtract() // Corrected the function name to "subtract"
+    {
+        cout << "\nsubtraction=" << a - b;
+    }
+};
+
+int main()
+{
+    C_subtract c1; // Corrected the class name to "C_subtract"
+    c1.getdata();
+    c1.display();
+    c1.add();
+    c1.subtract(); // Corrected the function name to "subtract"
+    return 0;
+}

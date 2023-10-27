@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void selectionSort(int a[], int n);
+
+int main() {
+    int t, n;
+    printf("How many numbers?");
+    scanf("%d", &n);
+    
+    int a[n]; // You need to specify the array size after getting the value of n.
+
+    printf("Enter the numbers:\n");
+    for (t = 0; t < n; t++) {
+        scanf("%d", &a[t]);
+    }
+
+    selectionSort(a, n);
+
+    printf("Sorted numbers are:\n");
+    for (t = 0; t < n; t++) {
+        printf("%d\n", a[t]);
+    }
+
+    return 0;
+}
+
+void selectionSort(int a[], int n) {
+    int i, j, temp, minpos;
+    for (i = 0; i < n; i++) {
+        minpos = i;
+        for (j = i + 1; j < n; j++) {
+            if (a[j] < a[minpos]) {
+                minpos = j;
+            }
+        }
+        temp = a[minpos];
+        a[minpos] = a[i];
+        a[i] = temp;
+    }
+}

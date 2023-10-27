@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int a[10];
+    int n, min, max; // Separate the variable declarations
+    printf("how many numbers?");
+    scanf("%d", &n);
+    printf("enter the numbers:\n"); // Add a newline character for better formatting
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    min = a[0];
+    max = a[0];
+    for (int i = 1; i < n; i++) {
+        if (max < a[i]) {
+            max = a[i];
+        } else if (min > a[i]) { // Change the semicolon to a block (curly braces)
+            min = a[i];
+        }
+    }
+    printf("Maximum: %d\n", max);
+    printf("Minimum: %d\n", min);
+    return 0;
+}

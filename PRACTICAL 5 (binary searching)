@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int i, n, x, mid, l, u;
+    int a[10];
+
+    printf("How many numbers? ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the element to search: ");
+    scanf("%d", &x);
+
+    l = 0;
+    u = n - 1;
+    while (l <= u) {
+        mid = (l + u) / 2;
+        if (a[mid] == x) {
+            printf("Element found at index %d.\n", mid);
+            break;
+        } else if (a[mid] < x) {
+            l = mid + 1;
+        } else {
+            u = mid - 1;
+        }
+    }
+
+    if (l > u) {
+        printf("Element not found.\n");
+    }
+
+    return 0;
+}

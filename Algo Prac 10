@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+#include <stdio.h>
+#include <time.h>
+
+// Function for the recursive algorithm
+int recursiveFibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+    }
+}
+
+// Function for the dynamic programming approach
+int dynamicFibonacci(int n) {
+    int fib[n + 1];
+    fib[0] = 0;
+    fib[1] = 1;
+    
+    for (int i = 2; i <= n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    
+    return fib[n];
+}
+
+int main() {
+    int n = 40; // Change this to the desired Fibonacci number you want to compute
+
+// Measure the time for the recursive algorithm
+    clock_t start1, end1;
+    start1 = clock();
+    int recursiveResult = recursiveFibonacci(n);
+    end1 = clock();
+
+    // Measure the time for the dynamic programming approach
+    clock_t start2, end2;
+    start2 = clock();
+    int dynamicResult = dynamicFibonacci(n);
+    end2 = clock();
+
+    double recursiveTime = ((double)(end1 - start1)) / CLOCKS_PER_SEC;
+    double dynamicTime = ((double)(end2 - start2)) / CLOCKS_PER_SEC;
+
+    printf("Recursive Fibonacci(%d) = %d\n", n, recursiveResult);
+    printf("Time taken for recursive algorithm: %f seconds\n", recursiveTime);
+
+    printf("\nDynamic Programming Fibonacci(%d) = %d\n", n, dynamicResult);
+    printf("Time taken for dynamic programming: %f seconds\n", dynamicTime);
+
+    return 0;
+}

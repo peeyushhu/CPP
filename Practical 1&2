@@ -1,0 +1,229 @@
+Program to demonstrate use of data members & member 
+
+functions.
+
+CODE-
+
+#include<iostream.h>
+
+#include<conio.h>
+
+class Student
+
+{
+
+private:
+
+int id;
+
+char name[20];
+
+public:
+
+void getdata()
+
+{
+
+cout<<"Enter id "<<endl;
+
+cin>>id;
+
+cout<<"Enter name"<<endl;
+
+cin>>name;
+
+}
+
+void display()
+
+{
+
+cout<<"\n"<<"Student ID : "<<id;
+
+cout<<"\n"<<"Student Name : "<<name;
+
+}
+
+};
+
+int main()
+
+{
+
+clrscr();
+
+cout<<”Your_name”;
+
+Student s1;
+
+s1.getdata();
+
+s1.display();
+
+getch();
+
+return 0;
+
+}
+
+2)Programs based on branching and looping statements using 
+
+classes.
+
+CODE-2A
+
+//Branching Statement
+
+#include<iostream.h>
+
+#include<conio.h>
+
+class Result
+
+{
+
+public:
+
+float marks;
+
+void total()
+
+{
+
+int m,n,b;
+
+cout<<"maths: ";
+
+cin>>m;
+
+cout<<"CS: ";
+
+cin>>n;
+
+cout<<"biology: \n";
+
+cin>>b;
+
+int c;
+
+c=m+n+b;
+
+cout<<"Marks Obtained: "<<c<<"\n";
+
+marks=c;
+
+}
+
+void display_result()
+
+{
+
+cout<<"Percentage obtained: "<<(marks/300*100)<<"%"<<"\n";
+
+float b=marks/300*100;
+
+if(b<35)
+
+{
+
+cout<<"You have failed the exam"<<"\n";
+
+}
+
+else if(b<=65)
+
+{
+
+cout<<"You have passed the exam"<<"\n";
+
+}
+
+else
+
+{
+cout<<"You got Distinction in exam";
+
+}
+
+}
+
+};//class end
+
+void main()
+
+{
+
+clrscr();
+
+cout<<”Your_name”;
+
+Result S1;
+
+S1.total();
+
+S1.display_result();
+
+getch();
+
+}
+
+CODE-2B
+
+//Looping Statement
+
+#include<iostream.h>
+
+#include<conio.h>
+
+class Tables
+
+{
+
+public:
+
+int mul,n;
+
+void getdata()
+
+{
+
+cout<<"Enter a number : ";
+
+cin>>n;
+
+}
+
+void display()
+
+{
+
+for(int i=1;i<=10;i++)
+
+{
+
+mul=n*i;
+
+cout<<"Table of "<<n<<" :"<<n<<"*"<<i<<"= "<<mul<<endl;
+
+}
+
+}
+
+};
+void main()
+
+{
+
+clrscr();
+
+cout<<”Your_name”;
+
+Tables t1;
+
+t1.getdata();
+
+t1.display();
+
+getch();
+
+}

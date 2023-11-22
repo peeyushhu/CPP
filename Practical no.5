@@ -1,0 +1,174 @@
+5.1) Create a class CCircle to calculate area and circumference of a circle. The program should 
+
+initialize the variables through constructor. Use the same constructor for reading radius of a circle. 
+
+CIRCLE_AREA member function is used to calculate area of a circle and CIRCLE_CIRCUMFERENCE is 
+
+used to calculate circumference of a circle. Member function SHOW to display area and
+
+circumference of a circle.
+
+Code:
+
+#include <iostream>
+
+#include <cmath>
+
+class CCircle {
+
+private:
+
+ double radius;
+
+ double area;
+
+ double circumference;
+
+public:
+
+ // Constructor
+
+ CCircle(double r) {
+
+ radius = r;
+
+ calculateArea();
+
+ calculateCircumference();
+
+ }
+
+ // Function to calculate the area of the circle
+
+ void calculateArea() {
+
+ area = M_PI * pow(radius, 2);
+
+ }
+
+ // Function to calculate the circumference of the circle
+
+ void calculateCircumference() {
+ circumference = 2 * M_PI * radius;
+
+ }
+
+ // Function to display the area and circumference of the circle
+
+ void show() {
+
+ std::cout << "Circle with radius " << radius << ":" << std::endl;
+
+ std::cout << "Area: " << area << std::endl;
+
+ std::cout << "Circumference: " << circumference << std::endl;
+
+ }
+
+};
+
+int main() {
+
+ double radius;
+
+ std::cout << "Enter the radius of the circle: ";
+
+ std::cin >> radius;
+
+ CCircle circle(radius);
+
+ circle.show();
+
+ return 0;
+
+}
+
+OUTPUT
+5.2) Create a class CPower for calculating any power of any number. It should have two constructors 
+
+one to read both number and its power and second to read number only and second number should 
+
+be 2. In addition class CPower should have two member functions RAISEDTO to calculate power and 
+
+SHOW to display result of calculation.
+
+Code:
+
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+class CPower {
+
+private:
+
+ double number;
+
+ int power;
+
+public:
+
+ // Constructor with both number and power
+
+ CPower(double num, int pow) 
+
+ {
+
+ number=num, power=pow;
+
+ }
+
+ // Constructor with default power of 2
+
+ CPower(double num)
+
+ {
+
+ number=num, power=2;
+
+ }// Function to calculate the power
+
+ double RAISEDTO() {
+
+ return pow(number, power);
+
+ }
+
+ // Function to display the result
+ void SHOW() {
+
+ cout << number << " raised to the power of " << power << " is: " << RAISEDTO() << endl;
+
+ }
+
+};
+
+int main() {
+
+ double number;
+
+ int power;
+
+ cout << "Enter a number: ";
+
+ cin >> number;
+
+ cout << "Enter the power: ";
+
+ cin >> power;
+
+ CPower cp1(number, power);
+
+ cp1.SHOW();
+
+ CPower cp2(number);
+
+ cp2.SHOW();
+
+ return 0;
+
+}
+
+OUTPUT

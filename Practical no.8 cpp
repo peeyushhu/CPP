@@ -1,0 +1,232 @@
+8.1) Create a class CAdd that reads two numbers adds it and print the result on the screen.
+
+Create another class CSubtract that reads two numbers subtracts it and print the result on
+
+the screen. Create another class CMultiply that multiplies numbers that are read through
+
+CAdd and CSubtract class. Write a full program using multiple.
+
+#include <iostream>
+
+using namespace std;
+
+class C_ADD
+
+{
+
+public:
+
+int a,b;
+
+void getdata()
+
+{
+
+cout<<"\n Enter ant two numbers";
+
+cin>>a>>b;
+
+}
+
+void display()
+
+{
+
+cout<<"\na="<<a;
+
+cout<<"\nb="<<b;
+
+}
+
+void add()
+
+{
+
+cout<<"\nSum="<<a+b;
+
+}
+
+};
+
+class C_Substract
+
+{
+
+public:
+
+int a1,b1;
+
+void getdata1()
+
+{
+
+cout<<"\nEnter any two numbers";
+
+cin>>a1>>b1;
+
+}
+
+void substract()
+
+{
+
+cout<<"\nSubstraction="<<a1-b1;
+
+}
+
+};
+
+class C_Multiply:public C_ADD, public C_Substract
+
+{
+
+public:
+void multiply()
+
+{
+
+cout<<"\nclass C_ADD Product="<<a*b;
+
+cout<<"\nclass C_Substract Product="<<a1*b1;
+
+}
+
+};
+
+int main()
+
+{
+
+C_Multiply c1;
+
+cout<<"\n C_Multiply Class\n";
+
+c1.getdata();
+
+c1.display();
+
+c1.add();
+
+c1.getdata1();
+
+c1.substract();
+
+c1.multiply();
+
+return 0;
+
+}
+
+Output:
+
+8.2) Define a class ‘Publication’ having data members as String title, float price. Write display()
+
+function which will display the data. From this class derive two classes‘Book’ & ‘Tape’. ‘Book’ class
+
+will add int page_cnt as data member & ‘Tape’ class will add float play_time as data member.
+
+Override display() function for both classes. Write constructors for all classes.
+
+Code:
+
+#include <iostream>
+
+#include<cstring>
+
+using namespace std;
+
+class publication
+
+{
+
+public:
+
+string Title;
+
+float price;
+
+publication(string t, float p)
+
+{
+Title=t;
+
+price=p;
+
+}
+
+void display()
+
+{
+
+cout<<"\n Title="<<Title;
+
+cout<<"\n Price="<<price;
+
+}
+
+};
+
+class book:public publication
+
+{
+
+public:
+
+int pg_cnt;
+
+book(string t, float p,int cnt):publication(t,p)
+
+{ pg_cnt=cnt;
+
+}
+
+void display()
+
+{ publication::display();
+
+cout<<"\n Page count="<<pg_cnt;
+
+}
+
+};
+
+class tape :public publication
+
+{
+
+public:
+
+float play_time;
+tape(string t, float p, float p_t):publication(t,p)
+
+{ play_time=p_t;
+
+}
+
+void display()
+
+{ publication::display();
+
+cout<<"\n Play time="<<play_time;
+
+}
+
+};
+
+int main()
+
+{
+
+book b1=book("Doctor Strange",350, 150);
+
+b1.display();
+
+tape t1= tape("Sathiya", 200, 2.5);
+
+t1.display();
+
+return 0;
+
+}
+
+OUTPUT:

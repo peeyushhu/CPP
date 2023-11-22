@@ -1,0 +1,98 @@
+1) Define a class ‘Overload’ which will overload the method ‘add ( )’ as int add (int x, int y) & int 
+
+add (int a, int b, int c) which will return the sum x+y & a+b+c respectively.
+
+Code:
+
+#include <iostream>
+
+using namespace std;
+
+class overload
+
+{
+
+ public:
+
+ int add(int x, int y)
+
+ {return (x+y);
+
+ }
+
+ int add(int x,int y,int z)
+
+ {
+
+ return (x+y+z);
+
+ }
+
+};
+
+int main()
+
+{
+
+ cout<<"\nFunction Overloading";
+
+ overload o;
+
+ cout<<"\nAddition of two numbers:"<<o.add(4,5);
+
+ cout<<"\nAddition of three numbers:"<<o.add(2,4,6);
+
+ return 0;
+
+}
+
+OUTPUT:
+4.2) Write a function Area( ) to find area of a circle, triangle. If only one argument is specified it will 
+
+calculate the area of circle. If two argument is specified it will calculate the area of triangle. Use the 
+
+concept of function overloading.
+
+#include <iostream>
+
+using namespace std;
+
+class Shape
+
+{
+
+ public:
+
+ void area(int r)
+
+ { cout<<"\nArea of Circle="<<3.14*r*r;
+
+ }
+
+ void area(int b,int h)
+
+ {
+
+ cout<<"\nArea of Triangle="<<0.5*b*h;
+
+ }
+
+};
+
+int main()
+
+{
+
+ cout<<"\n4.2 Function Overloading ";
+
+ Shape s;
+
+ s.area(7);
+
+ s.area(4,5);
+
+ return 0;
+
+}
+
+OUTPUT:
